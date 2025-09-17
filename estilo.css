@@ -390,4 +390,139 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+    /* --- ESTILOS PÁGINA DE CONFIRMAÇÃO --- */
+
+.confirmation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.confirmation-box {
+    background-color: var(--card-background);
+    border: 1px solid #2a2538;
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.confirmation-header i {
+    font-size: 4rem;
+    color: var(--neon-green);
+    text-shadow: 0 0 15px var(--neon-green);
+}
+
+.confirmation-header h1 {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.confirmation-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.prize-summary {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.prize-summary img {
+    border-radius: 8px;
+}
+
+.prize-info small {
+    display: block;
+    color: var(--text-muted);
+}
+
+.prize-info strong {
+    font-size: 1.2rem;
+}
+
+.lucky-numbers h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+}
+
+.number-box {
+    background-color: var(--background-color);
+    border: 1px solid #2a2538;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.transaction-id {
+    margin-top: 2rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.confirmation-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.confirmation-actions .btn-primary,
+.confirmation-actions .btn-secondary {
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.confirmation-actions .btn-primary {
+    background-color: var(--neon-green);
+    color: var(--background-color);
+    box-shadow: 0 0 15px var(--neon-green);
+}
+.confirmation-actions .btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.confirmation-actions .btn-secondary {
+    background-color: #2a2538;
+    color: var(--text-color);
+}
+.confirmation-actions .btn-secondary:hover {
+    background-color: #3a3548;
+}
+
+/* --- RESPONSIVO PÁGINA DE CONFIRMAÇÃO --- */
+@media (max-width: 768px) {
+    .confirmation-box {
+        padding: 1.5rem;
+    }
+    .prize-summary {
+        flex-direction: column;
+        text-align: center;
+    }
+    .confirmation-actions {
+        flex-direction: column;
+    }
+}
 }
