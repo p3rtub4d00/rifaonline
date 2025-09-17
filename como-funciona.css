@@ -1,0 +1,134 @@
+.breadcrumb {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.breadcrumb span {
+    color: #777;
+}
+
+.como-funciona-detalhado {
+    margin: 2rem 0 4rem;
+}
+
+.como-funciona-detalhado h1 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.intro {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.passos-detalhados {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.passo-detalhado {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.passo-numero {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.passo-conteudo h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.passo-conteudo p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.perguntas-frequentes {
+    margin-bottom: 3rem;
+}
+
+.perguntas-frequentes h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-pergunta {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background-color: #f8f9fa;
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-pergunta i {
+    transition: transform 0.3s ease;
+}
+
+.faq-pergunta.active i {
+    transform: rotate(180deg);
+}
+
+.faq-resposta {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-resposta.active {
+    padding: 1rem 1.5rem;
+    max-height: 300px;
+}
+
+.faq-resposta p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .passo-detalhado {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .passo-numero {
+        align-self: center;
+    }
+}
