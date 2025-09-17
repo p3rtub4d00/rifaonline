@@ -1,0 +1,99 @@
+.breadcrumb {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.breadcrumb span {
+    color: #777;
+}
+
+.filtros-premios {
+    margin: 2rem 0;
+}
+
+.filtros-premios h1 {
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.filtros {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.filtro-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filtro-group label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.filtro-group select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.filtro-group:last-child {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.filtro-group input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+}
+
+.btn-buscar {
+    padding: 8px 12px;
+    background-color: var(--accent);
+    color: white;
+    border: 1px solid var(--accent);
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.lista-premios {
+    margin-bottom: 3rem;
+}
+
+.premio-status {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .filtros {
+        flex-direction: column;
+    }
+    
+    .filtro-group:last-child {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filtro-group input {
+        border-radius: 5px;
+        border-right: 1px solid #ddd;
+        margin-bottom: 10px;
+    }
+    
+    .btn-buscar {
+        border-radius: 5px;
+    }
+}
