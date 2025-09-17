@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Prêmio - Pix da Sorte</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="detalhes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-ticket-alt"></i>
+                <h1>Pix da Sorte</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="premios.html">Prêmios</a></li>
+                    <li><a href="como-funciona.html">Como Funciona</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="admin.html" class="btn">Área Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb container">
+        <a href="index.html">Início</a> > <a href="premios.html">Prêmios</a> > <span>Smartphone Premium</span>
+    </div>
+
+    <main class="container">
+        <section class="detalhes-premio">
+            <div class="premio-imagens">
+                <div class="imagem-principal">
+                    <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80" alt="Smartphone Premium" id="imagemPrincipal">
+                </div>
+                <div class="miniaturas">
+                    <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80" alt="Smartphone ângulo 1" class="miniatura ativa">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="Smartphone ângulo 2" class="miniatura">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&q=80" alt="Smartphone ângulo 3" class="miniatura">
+                </div>
+            </div>
+
+            <div class="premio-info-detalhes">
+                <h1>Smartphone Premium</h1>
+                <div class="premio-status">
+                    <span class="status disponivel">Disponível</span>
+                    <span class="numeros-vendidos">152/300 números vendidos</span>
+                </div>
+                <p class="descricao-detalhes">Smartphone último modelo com 256GB de armazenamento, câmera traseira de 108MP, tela OLED de 6.7 polegadas e processador de última geração. Inclui capa protetora e película de vidro temperado.</p>
+                
+                <div class="preco-container">
+                    <span class="preco">R$ 5,00</span>
+                    <span class="por-numero">por número</span>
+                </div>
+
+                <form id="formCompra" class="form-compra">
+                    <div class="form-group">
+                        <label for="quantidade">Quantidade de números:</label>
+                        <div class="quantidade-container">
+                            <button type="button" class="btn-quantidade" id="decrementar">-</button>
+                            <input type="number" id="quantidade" name="quantidade" value="1" min="1" max="148">
+                            <button type="button" class="btn-quantidade" id="incrementar">+</button>
+                        </div>
+                    </div>
+
+                    <div class="total-container">
+                        <span>Total: </span>
+                        <span id="total">R$ 5,00</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nome">Nome completo:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp:</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(11) 99999-9999" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-comprar">Comprar números</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="premio-detalhes-adicionais">
+            <h2>Informações Adicionais</h2>
+            <div class="detalhes-grid">
+                <div class="detalhe-item">
+                    <i class="fas fa-tag"></i>
+                    <h3>Sorteio</h3>
+                    <p>15/12/2023 às 20h</p>
+                </div>
+                <div class="detalhe-item">
+                    <i class="fas fa-ticket-alt"></i>
+                    <h3>Números disponíveis</h3>
+                    <p>148 de 300 números</p>
+                </div>
+                <div class="detalhe-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Compra segura</h3>
+                    <p>Seus dados estão protegidos</p>
+                </div>
+                <div class="detalhe-item">
+                    <i class="fas fa-gift"></i>
+                    <h3>Entrega</h3>
+                    <p>Frete grátis para todo Brasil</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Pagamento -->
+    <div class="modal" id="modalPagamento">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Finalizar Compra</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="resumo-compra">
+                    <h4>Resumo da sua compra</h4>
+                    <div class="resumo-item">
+                        <span>Prêmio:</span>
+                        <span>Smartphone Premium</span>
+                    </div>
+                    <div class="resumo-item">
+                        <span>Quantidade:</span>
+                        <span id="resumo-quantidade">1 número</span>
+                    </div>
+                    <div class="resumo-item total">
+                        <span>Total:</span>
+                        <span id="resumo-total">R$ 5,00</span>
+                    </div>
+                </div>
+
+                <div class="metodo-pagamento">
+                    <h4>Pagamento via PIX</h4>
+                    <p>Escaneie o QR Code ou copie o código para pagamento</p>
+                    
+                    <div class="qrcode-container">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAflBMVEX///8AAAD8/Pz4+Pj09PTs7Ozq6urj4+Pw8PDm5ubZ2dnQ0NDGxsbCwsK9vb24uLi0tLSvr6+pqamnp6elpaWfn5+cnJyYmJiUlJSSkpKPj4+Li4uJiYmFhYWBgYF9fX16enp4eHh1dXV0dHRxcXFvb29tbW1ra2tpaWlnZ2dlZWVjY2NhYWFHGLFPAAAIFElEQVR4nO2d63KqOhSFAUEFvGvV1rbv/5aPJm1tLQI5a+0DmfWnz8yZ6VfIysrOzk5C0zAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMwzAMw极速赛车开奖结果记录历史
+                    </div>
+                    
+                    <div class="pix-codigo">
+                        <p>Chave PIX: <strong>pixdasorte@rifas.com</strong></p>
+                        <button class="btn-copiar">Copiar código</button>
+                    </div>
+                </div>
+
+                <div class="instrucoes-pagamento">
+                    <h4>Instruções:</h4>
+                    <ol>
+                        <li>Abra seu app do banco</li>
+                        <li>Selecione a opção PIX</li>
+                        <li>Escaneie o QR Code ou cole o código</li>
+                        <li>Confirme o pagamento</li>
+                        <li>O sistema confirmará automaticamente</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre Nós</h3>
+                    <p>O Pix da Sorte é uma plataforma segura e divertida para participar de rifas online com pagamento via PIX.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@pixdasorte.com.br</p>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <div class="socials">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Pix da Sorte - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="detalhes.js"></script>
+</body>
+</html>
