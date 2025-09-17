@@ -1,0 +1,156 @@
+.breadcrumb {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.breadcrumb span {
+    color: #777;
+}
+
+.contato-info {
+    margin: 2rem 0;
+}
+
+.contato-info h1 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.intro {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.canais-contato {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.canal {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.canal-icone {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #f0f5ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--accent);
+    font-size: 1.5rem;
+}
+
+.canal h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.canal p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.btn-canal {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.btn-canal:hover {
+    background-color: #2980b9;
+}
+
+.formulario-contato {
+    margin-bottom: 3rem;
+}
+
+.formulario-contato h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.localizacao h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.mapa {
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.info-local {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.info-local p {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .canais-contato {
+        grid-template-columns: 1fr;
+    }
+}
