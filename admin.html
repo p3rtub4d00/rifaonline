@@ -1,290 +1,135 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área Administrativa - Pix da Sorte</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="admin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="admin-body">
-    <header>
-        <div class="container header-content">
-            <div class="logo">
+<!-- Adicionar estas novas seções ao admin.html existente -->
+
+<!-- Controle de Vendas -->
+<section id="vendas" class="admin-section">
+    <div class="section-header">
+        <h2>Controle de Vendas</h2>
+        <div class="filters">
+            <div class="filter-group">
+                <label for="dataInicio">Data início:</label>
+                <input type="date" id="dataInicio">
+            </div>
+            <div class="filter-group">
+                <label for="dataFim">Data fim:</label>
+                <input type="date" id="dataFim">
+            </div>
+            <div class="filter-group">
+                <label for="filtroPremio">Prêmio:</label>
+                <select id="filtroPremio">
+                    <option value="todos">Todos</option>
+                    <!-- Opções preenchidas via JavaScript -->
+                </select>
+            </div>
+            <button class="btn" id="btnFiltrarVendas">Filtrar</button>
+        </div>
+    </div>
+
+    <div class="vendas-stats">
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="stat-info">
+                <h3 id="totalVendas">R$ 0,00</h3>
+                <p>Total em Vendas</p>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">
                 <i class="fas fa-ticket-alt"></i>
-                <h1>Pix da Sorte</h1>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="premios.html">Prêmios</a></li>
-                    <li><a href="admin.html" class="btn active">Área Admin</a></li>
-                    <li><a href="#" id="logout">Sair</a></li>
-                </ul>
-            </nav>
+            <div class="stat-info">
+                <h3 id="totalNumeros">0</h3>
+                <p>Números Vendidos</p>
+            </div>
         </div>
-    </header>
-
-    <div class="admin-container container">
-        <aside class="admin-sidebar">
-            <div class="admin-profile">
-                <div class="admin-avatar">
-                    <i class="fas fa-user-shield"></i>
-                </div>
-                <h3>Administrador</h3>
-                <p>admin@pixdasorte.com.br</p>
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-users"></i>
             </div>
-
-            <nav class="admin-menu">
-                <ul>
-                    <li><a href="#dashboard" class="admin-menu-item active" data-target="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                    <li><a href="#premios" class="admin-menu-item" data-target="premios"><i class="fas fa-gift"></i> Gerenciar Prêmios</a></li>
-                    <li><a href="#vendas" class="admin-menu-item" data-target="vendas"><i class="fas fa-shopping-cart"></i> Controle de Vendas</a></li>
-                    <li><a href="#sorteio" class="admin-menu-item" data-target="sorteio"><i class="fas fa-dice"></i> Realizar Sorteio</a></li>
-                    <li><a href="#ganhadores" class="admin-menu-item" data-target="ganhadores"><i class="fas fa-trophy"></i> Ganhadores</a></li>
-                    <li><a href="#banners" class="admin-menu-item" data-target="banners"><i class="fas fa-image"></i> Banners</a></li>
-                    <li><a href="#configuracoes" class="admin-menu-item" data-target="configuracoes"><i class="fas fa-cog"></i> Configurações</a></li>
-                </ul>
-            </nav>
-        </aside>
-
-        <main class="admin-main">
-            <!-- Dashboard -->
-            <section id="dashboard" class="admin-section active">
-                <h2>Dashboard</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3>R$ 5.250,00</h3>
-                            <p>Faturamento Total</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-ticket-alt"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3>1.350</h3>
-                            <p>Números Vendidos</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-gift"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3>8</h3>
-                            <p>Prêmios Ativos</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="stat-info">
-                            <h3>524</h3>
-                            <p>Participantes</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="dashboard-charts">
-                    <div class="chart-card">
-                        <h3>Vendas por Dia (Últimos 7 dias)</h3>
-                        <canvas id="vendasChart" width="400" height="200"></canvas>
-                    </div>
-                    <div class="chart-card">
-                        <h3>Prêmios Mais Populares</h3>
-                        <canvas id="premiosChart" width="400" height="200"></canvas>
-                    </div>
-                </div>
-
-                <div class="recent-activity">
-                    <h3>Atividade Recente</h3>
-                    <div class="activity-list">
-                        <div class="activity-item">
-                            <div class="activity-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </div>
-                            <div class="activity-content">
-                                <p><strong>João Silva</strong> comprou 5 números para <strong>Smartphone Premium</strong></p>
-                                <span class="activity-time">há 10 minutos</span>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">
-                                <i class="fas fa-gift"></i>
-                            </div>
-                            <div class="activity-content">
-                                <p>Novo prêmio adicionado: <strong>Viagem para Fernando de Noronha</strong></p>
-                                <span class="activity-time">há 2 horas</span>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="activity-content">
-                                <p>Pagamento confirmado: <strong>Maria Santos</strong> - R$ 25,00</p>
-                                <span class="activity-time">há 5 horas</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Gerenciar Prêmios -->
-            <section id="premios" class="admin-section">
-                <div class="section-header">
-                    <h2>Gerenciar Prêmios</h2>
-                    <button class="btn btn-add" id="addPremioBtn"><i class="fas fa-plus"></i> Adicionar Prêmio</button>
-                </div>
-
-                <div class="filters">
-                    <div class="filter-group">
-                        <label for="statusFilter">Status:</label>
-                        <select id="statusFilter">
-                            <option value="all">Todos</option>
-                            <option value="active">Ativos</option>
-                            <option value="draft">Rascunhos</option>
-                            <option value="finished">Finalizados</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <input type="text" placeholder="Buscar prêmio..." id="searchPremio">
-                    </div>
-                </div>
-
-                <div class="premios-list">
-                    <div class="premio-admin-card">
-                        <div class="premio-admin-image">
-                            <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80" alt="Smartphone Premium">
-                            <span class="status-badge active">Ativo</span>
-                        </div>
-                        <div class="premio-admin-info">
-                            <h3>Smartphone Premium</h3>
-                            <p>152/300 números vendidos</p>
-                            <div class="premio-meta">
-                                <span><i class="fas fa-tag"></i> R$ 5,00 por número</span>
-                                <span><i class="fas fa-calendar"></i> Sorteio: 15/12/2023</span>
-                            </div>
-                        </div>
-                        <div class="premio-admin-actions">
-                            <button class="btn-icon" title="Editar"><i class="fas fa-edit"></i></button>
-                            <button class="btn-icon" title="Visualizar"><i class="fas fa-eye"></i></button>
-                            <button class="btn-icon" title="Relatório"><i class="fas fa-chart-bar"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="premio-admin-card">
-                        <div class="premio-admin-image">
-                            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Carro Esportivo">
-                            <span class="status-badge active">Ativo</span>
-                        </div>
-                        <div class="premio-admin-info">
-                            <h3>Carro Esportivo 0km</h3>
-                            <p>89/500 números vendidos</p>
-                            <div class="premio-meta">
-                                <span><i class="fas fa-tag"></i> R$ 10,00 por número</span>
-                                <span><i class="fas fa-calendar"></i> Sorteio: 20/01/2024</span>
-                            </div>
-                        </div>
-                        <div class="premio-admin-actions">
-                            <button class="btn-icon" title="Editar"><i class="fas fa-edit"></i></button>
-                            <button class="btn-icon" title="Visualizar"><i class="fas fa-eye"></i></button>
-                            <button class="btn-icon" title="Relatório"><i class="fas fa-chart-bar"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Controle de Vendas -->
-            <section id="vendas" class="admin-section">
-                <h2>Controle de Vendas</h2>
-                <p>Esta seção está em desenvolvimento.</p>
-            </section>
-
-            <!-- Realizar Sorteio -->
-            <section id="sorteio" class="admin-section">
-                <h2>Realizar Sorteio</h2>
-                <p>Esta seção está em desenvolvimento.</p>
-            </section>
-
-            <!-- Ganhadores -->
-            <section id="ganhadores" class="admin-section">
-                <h2>Ganhadores</h2>
-                <p>Esta seção está em desenvolvimento.</p>
-            </section>
-
-            <!-- Banners -->
-            <section id="banners" class="admin-section">
-                <h2>Gerenciar Banners</h2>
-                <p>Esta seção está em desenvolvimento.</p>
-            </section>
-
-            <!-- Configurações -->
-            <section id="configuracoes" class="admin-section">
-                <h2>Configurações</h2>
-                <p>Esta seção está em desenvolvimento.</p>
-            </section>
-        </main>
-    </div>
-
-    <!-- Modal Adicionar Prêmio -->
-    <div class="modal" id="addPremioModal">
-        <div class="modal-content large">
-            <div class="modal-header">
-                <h3>Adicionar Novo Prêmio</h3>
-                <button class="close-modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="addPremioForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="premioNome">Nome do Prêmio</label>
-                            <input type="text" id="premioNome" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="premioValor">Valor por Número (R$)</label>
-                            <input type="number" id="premioValor" min="1" step="0.01" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="premioDescricao">Descrição</label>
-                        <textarea id="premioDescricao" rows="3" required></textarea>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="premioTotalNumeros">Total de Números</label>
-                            <input type="number" id="premioTotalNumeros" min="1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="premioDataSorteio">Data do Sorteio</label>
-                            <input type="date" id="premioDataSorteio" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="premioImagem">Imagem do Prêmio</label>
-                        <input type="file" id="premioImagem" accept="image/*">
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="button" class="btn btn-secondary">Cancelar</button>
-                        <button type="submit" class="btn">Salvar Prêmio</button>
-                    </div>
-                </form>
+            <div class="stat-info">
+                <h3 id="totalClientes">0</h3>
+                <p>Clientes Únicos</p>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="admin.js"></script>
-</body>
-</html>
+    <div class="vendas-list">
+        <h3>Últimas Vendas</h3>
+        <table class="tabela-vendas">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Cliente</th>
+                    <th>Prêmio</th>
+                    <th>Números</th>
+                    <th>Valor</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="vendasTbody">
+                <!-- Vendas preenchidas via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Buscar Ganhador -->
+<section id="ganhadores" class="admin-section">
+    <div class="section-header">
+        <h2>Gerenciar Ganhadores</h2>
+    </div>
+
+    <div class="buscar-ganhador">
+        <h3>Buscar Ganhador</h3>
+        <div class="search-box">
+            <input type="text" id="buscarGanhador" placeholder="Digite o número sorteado...">
+            <button class="btn" id="btnBuscarGanhador">Buscar</button>
+        </div>
+        
+        <div class="resultado-busca" id="resultadoBusca" style="display: none;">
+            <h4>Resultado da Busca</h4>
+            <div class="ganhador-info">
+                <div class="info-item">
+                    <span>Número:</span>
+                    <span id="numeroGanhador">-</span>
+                </div>
+                <div class="info-item">
+                    <span>Prêmio:</span>
+                    <span id="premioGanhador">-</span>
+                </div>
+                <div class="info-item">
+                    <span>Ganhador:</span>
+                    <span id="nomeGanhador">-</span>
+                </div>
+                <div class="info-item">
+                    <span>Contato:</span>
+                    <span id="contatoGanhador">-</span>
+                </div>
+                <div class="actions">
+                    <button class="btn" id="btnContatarGanhador">Contatar Ganhador</button>
+                    <button class="btn btn-secondary" id="btnRegistrarEntrega">Registrar Entrega</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ganhadores-list">
+        <h3>Ganhadores Registrados</h3>
+        <table class="tabela-ganhadores">
+            <thead>
+                <tr>
+                    <th>Data Sorteio</th>
+                    <th>Prêmio</th>
+                    <th>Ganhador</th>
+                    <th>Número</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="ganhadoresTbody">
+                <!-- Ganhadores preenchidos via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</section>
