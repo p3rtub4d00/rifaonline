@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprovante de Compra - Pix da Sorte</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="comprovante.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-ticket-alt"></i>
+                <h1>Pix da Sorte</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="premios.html">Prêmios</a></li>
+                    <li><a href="admin.html" class="btn">Área Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb container">
+        <a href="index.html">Início</a> > <span>Comprovante</span>
+    </div>
+
+    <main class="container">
+        <div class="comprovante-container">
+            <div class="comprovante-header">
+                <h1>Comprovante de Compra</h1>
+                <p>Nº <span id="numero-pedido">PS20230001</span></p>
+            </div>
+
+            <div class="comprovante-info">
+                <div class="info-section">
+                    <h2>Resumo da Compra</h2>
+                    <div class="info-item">
+                        <span>Data:</span>
+                        <span id="data-compra">01/12/2023 14:30</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Prêmio:</span>
+                        <span id="premio-nome">Smartphone Premium</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Quantidade:</span>
+                        <span id="quantidade-compra">5 números</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Valor total:</span>
+                        <span id="valor-total">R$ 25,00</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Status:</span>
+                        <span class="status confirmado">Confirmado</span>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Números da Sorte</h2>
+                    <div class="numeros-sorte" id="numeros-sorte">
+                        <!-- Números serão preenchidos via JavaScript -->
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Dados do Comprador</h2>
+                    <div class="info-item">
+                        <span>Nome:</span>
+                        <span id="nome-comprador">João Silva</span>
+                    </div>
+                    <div class="info-item">
+                        <span>E-mail:</span>
+                        <span id="email-comprador">joao@email.com</span>
+                    </div>
+                    <div class="info-item">
+                        <span>WhatsApp:</span>
+                        <span id="whatsapp-comprador">(11) 99999-9999</span>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Informações do Sorteio</h2>
+                    <div class="info-item">
+                        <span>Data do sorteio:</span>
+                        <span id="data-sorteio">15/12/2023 às 20h</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Status:</span>
+                        <span id="status-sorteio">Aguardando sorteio</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comprovante-actions">
+                <button class="btn btn-imprimir" onclick="window.print()">
+                    <i class="fas fa-print"></i> Imprimir Comprovante
+                </button>
+                <button class="btn btn-whatsapp" id="btnWhatsApp">
+                    <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+                </button>
+                <a href="index.html" class="btn btn-voltar">
+                    <i class="fas fa-home"></i> Voltar ao Início
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre Nós</h3>
+                    <p>O Pix da Sorte é uma plataforma segura e divertida para participar de rifas online com pagamento via PIX.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@pixdasorte.com.br</p>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <div class="socials">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Pix da Sorte - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="comprovante.js"></script>
+</body>
+</html>
